@@ -1,80 +1,77 @@
 /* --- BRANDING VARIABLEN --- */
 :root {
+    box-sizing: border-box;
     --bg-base: #16191b;
     --bg-light: #2a2a2c;
     --bg-medium: #1f2024;
     --bg-dark: #111216;
 
+    font-size: calc(1vw + 0.6em); /* Dynamische Schriftgröße basierend auf der Viewport-Breite */
     --font-base: #d9d9d6;
     --font-H1: #ffffff;
     --font-H2: #bc9c70;
     --font-family: 'Montserrat', sans-serif;
+    
 
     --accent-medium: #b8936d;
 }
 
-* {
+*,
+::before,
+::after {
+    box-sizing: inherit;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     font-family: var(--font-family);
     background-color: var(--bg-base);
     color: var(--font-base);
+    min-height: 100vh;
     overflow: hidden; /* Verhindert Scrollen für diesen "One-Shot" Look */
 }
 
-/* --- HAUPTLAYOUT --- */
-.editorial-layout {
-    display: flex;
+.wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr; 
+    grid-template-rows: 1fr 2fr 1fr; /* Eine Zeile */
+    gap: 1em;
     width: 100vw;
     height: 100vh;
     position: relative;
 }
 
-/* Die feine vertikale Linie in der Mitte */
-.center-line {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background-color: rgba(217, 217, 214, 0.08); /* Sehr dezentes Grau */
-    z-index: 1;
-}
-
-/* Die beiden Hälften */
-.panel {
-    flex: 1;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.panel-left {
-    background-color: var(--bg-dark); /* Etwas dunkler links für Kontrast */
-    padding: 40px;
-}
-
-.panel-right {
-    background-color: var(--bg-base);
-    justify-content: center;
-    padding-left: 8%; /* Abstand zur Mitte */
-    z-index: 10; /* WICHTIG: Text muss über dem Kreis liegen */
-}
-
 .brand-top-left {
-    font-weight: 800;
+    grid-area: 1 / 1 / 2 / 2; /* Oben links */
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
     font-size: 1rem;
-    letter-spacing: 2px;
+    letter-spacing: 0.15em;
     color: var(--font-base);
 }
 
-/* --- DER ZENTRALE KREIS --- */
+
+.content-wrapper{
+    grid-area: 2 / 3 / 3 / 4; 
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50vw; /* Passt sich der Bildschirmbreite an */
+    height: 50vw;
+    padding: 1em;
+    z-index: 10; 
+}
+
 .center-circle {
-    position: absolute;
+    grid-area: 2 / 2 / 3 / 3;
+    position: relative;
+    display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -87,56 +84,6 @@ body {
     pointer-events: none; /* Klicks gehen durch den Kreis hindurch auf den Button */
 }
 
-.circle-left {
-    flex: 1;
-    border-radius: 600px 0 0 600px; /* Halber Kreis links */
-    background-color: #000;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Weicher Rand/Nebel-Effekt für das Bild links (wie im Screenshot) */
-.circle-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle, transparent 40%, var(--bg-dark) 100%);
-}
-
-.circle-logo {
-    width: 60%;
-    opacity: 0.5;
-    filter: grayscale(100%);
-}
-
-.circle-right {
-    flex: 1;
-    border-radius: 0 600px 600px 0; /* Halber Kreis rechts */
-    background-color: var(--bg-light); /* Hebt sich vom Basis-Hintergrund ab */
-}
-
-/* Das kleine Icon in der Mitte */
-.center-dot {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-weight: 400;
-    font-size: 20px;
-    pointer-events: auto; /* Müsste man aktivieren, wenn es anklickbar sein soll */
-}
-
-/* --- TYPOGRAFIE & BUTTON --- */
 .headline-editorial {
     font-size: clamp(4rem, 8vw, 8rem); /* Skaliert fließend */
     font-weight: 800;
@@ -147,10 +94,8 @@ body {
     position: relative;
 }
 
-/* Minimalistischer Button (passend zum Editorial-Stil) */
 .btn-text-only {
-    display: inline-flex;
-    align-items: center;
+    
     text-decoration: none;
     color: var(--font-base);
     font-size: 1.1rem;
@@ -172,6 +117,50 @@ body {
     transform: translateX(10px);
     color: var(--accent-medium);
 }
+
+
+
+/* --- DER ZENTRALE KREIS --- */
+
+
+
+
+.circle-left {
+    flex: 1;
+    border-radius: 600px 0 0 600px; /* Halber Kreis links */
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    inset: 0px 50% 0px 0px;
+}
+
+/* Weicher Rand/Nebel-Effekt für das Bild links (wie im Screenshot) */
+.circle-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, transparent 40%, var(--bg-dark) 100%);
+}
+
+.circle-logo {
+    width: 60%;
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.circle-right {
+    flex: 1;
+    border-radius: 0 600px 600px 0; /* Halber Kreis rechts */
+    background-color: var(--bg-light); /* Hebt sich vom Basis-Hintergrund ab */
+}
+
+
+
+
+
+
 
 /* --- ANIMATIONEN --- */
 .fade-in {
@@ -195,34 +184,61 @@ body {
 }
 
 /* --- RESPONSIVE STYLES FÜR MOBILE & TABLET --- */
+/* --- RESPONSIVE STYLES FÜR MOBILE & TABLET --- */
 @media (max-width: 768px) {
   
-  /* Die Trennlinie in der Mitte auf dem Handy ausblenden */
+  /* Das Hauptlayout zwingen, exakt auf den Bildschirm zu passen */
+  .editorial-layout {
+    flex-direction: column !important;
+    height: 100vh !important;
+    height: 100dvh !important; /* Berücksichtigt die Browserleiste am Handy */
+    overflow: hidden !important;
+    position: relative;
+  }
+
+  /* Die Trennlinie im Hintergrund ausblenden */
   .center-line {
-    display: none; 
+    display: none !important; 
   }
 
-  /* Den Kreis deutlich verkleinern, damit er auf jedes Handy passt */
+  /* Den Kreis elegant verkleinern, damit er nicht den Bildschirm sprengt */
   .center-circle {
-    width: 75vw; /* Nutzt 75% der Displaybreite */
-    height: 75vw; /* Bleibt perfekt quadratisch */
-    max-width: 320px; /* Wird auf großen Handys nicht riesig */
-    max-height: 320px;
-    top: 35%; /* Schiebt den Kreis im oberen Drittel des Displays */
+    width: 280px !important;
+    height: 280px !important;
+    top: 35% !important; /* Setzt den Kreis ins obere Drittel */
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 
-  /* Die beiden Hintergrund-Hälften (Links/Rechts) untereinander stapeln */
-  .editorial-layout.fade-in {
-    flex-direction: column; 
-  }
-
-  /* Das rechte Panel für den Text anpassen */
+  /* Das rechte Panel (wo der Text drin liegt) nach unten schieben */
   .panel.panel-right {
-    padding-left: 0; /* Altes Desktop-Padding entfernen */
-    padding: 30px; /* Schöner, gleichmäßiger Abstand zum Rand */
-    text-align: center; /* Text auf dem Handy zentrieren */
-    justify-content: flex-end; /* Schiebt den Text nach unten unter den Kreis */
-    padding-bottom: 12vh; /* Abstand zum unteren Bildschirmrand */
-    z-index: 10;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 45vh !important; /* Nimmt die untere Hälfte des Bildschirms ein */
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background: transparent !important; /* Verhindert harte Farbkanten */
+  }
+
+  /* DIE WICHTIGSTE KORREKTUR: Die Riesenschrift zähmen */
+  .headline-editorial, h1 {
+    font-size: 2.2rem !important; /* Kompakt, modern und bricht nicht klobig um */
+    line-height: 1.2 !important;
+    letter-spacing: 0.05em !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Den Kontakt-Button/Link darunter sauber Platzieren */
+  .btn-text-only, a {
+    font-size: 0.95rem !important;
+    letter-spacing: 0.1em !important;
+    opacity: 0.8;
   }
 }

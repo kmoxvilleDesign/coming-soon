@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clearvision Consulting - Coming Soon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - Landing Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="wrapper">
+  <!-- Das Firmenlogo oben links wird absolut über das Layout gelegt -->
+  <div class="brand-header">
+    <span class="company-name">CLEARVISION.</span>
+  </div>
 
-        <div class="center-circle float-subtle">
-            <div class="circle-left">
-                <img src="logo.png" alt="Clearvision Logo" class="circle-logo">
-                <div class="circle-overlay"></div>
-            </div>
-            <div class="circle-right"></div>
-            
-        </div>
+  <div class="grid-container">
 
+    <!-- Linke Spalte (1fr) -->
+    <div class="left-column"></div>
+
+    <!-- Rechte Spalte (2fr) -->
+    <div class="right-column">
+      <div class="content">
+        <h1>COMING<br>SOON</h1>
         
-        <div class="brand-top-left">CLEARVISION.</div>
-
-        
-            <div class="content-wrapper">
-                <h1 class="headline-editorial">COMING<br>SOON</h1>
-                <a href="mailto:kontakt@clearvision-consulting.de?subject=Kontaktanfrage" class="btn-text-only">
-                <span class="btn-text">Kontakt aufnehmen</span>
-                <span class="btn-arrow">→</span>
-                </a>
-            </div>
+        <a href="mailto:info@clearvision-consulting.com?subject=Kontaktanfrage" class="btn-contact">Kontakt aufnehmen</a>
+      </div>
     </div>
+
+    <!-- Zentraler Kreis (wird absolut in die Mitte der Seite gesetzt) -->
+    <div class="center-circle">
+      <div class="circle-half-left">
+        <img class="logo" src="logo.png" alt="Firmenlogo">
+      </div>
+      <div class="circle-half-right"></div>
+    </div>
+
+  </div>
 
 </body>
 </html>

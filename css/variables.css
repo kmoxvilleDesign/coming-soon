@@ -1,0 +1,237 @@
+/* ============================================================
+   ClearVision Consulting
+   Design Tokens
+   Precision by Design
+   Version 1.0
+============================================================ */
+
+:root {
+
+    /* ============================================================
+       BRAND TOKENS
+       Immutable brand colours.
+       Never use these values directly in components.
+    ============================================================ */
+
+    --brand-black: #111216;
+    --brand-graphite: #1F2024;
+    --brand-charcoal: #2A2A2C;
+
+    --brand-ivory: #F4F1EA;
+
+    --brand-gold: #A8825F;
+    --brand-gold-light: #C79D72;
+
+    --brand-red-overlay: rgba(157, 70, 61, 0.65);
+
+
+
+    /* ============================================================
+       SEMANTIC COLOURS
+       Components should use these variables.
+    ============================================================ */
+
+    --bg-primary: var(--brand-black);
+
+    --bg-secondary: var(--brand-graphite);
+
+    --bg-surface: var(--brand-charcoal);
+
+    --bg-overlay: rgba(17,18,22,.85);
+
+
+
+    --text-primary: var(--brand-ivory);
+
+    --text-secondary: #E2E8F0;
+
+    --text-muted: #94A3B8;
+
+    --text-heading: #FFFFFF;
+
+
+
+    --accent-primary: var(--brand-gold);
+
+    --accent-secondary: var(--brand-gold-light);
+
+    --accent-overlay: var(--brand-red-overlay);
+
+
+
+    --border-primary: rgba(255,255,255,.08);
+
+
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+
+    --font-family-base:
+        "Montserrat",
+        sans-serif;
+
+    --font-size-xs: .75rem;
+
+    --font-size-sm: .875rem;
+
+    --font-size-base: 1rem;
+
+    --font-size-lg: 1.125rem;
+
+    --font-size-xl: 1.25rem;
+
+    --font-size-2xl: 1.5rem;
+
+    --font-size-3xl: 2rem;
+
+    --font-size-4xl: 3rem;
+
+    --font-size-5xl: 4rem;
+
+
+
+    --font-weight-light:300;
+
+    --font-weight-regular:400;
+
+    --font-weight-medium:500;
+
+    --font-weight-semibold:600;
+
+    --font-weight-bold:700;
+
+
+
+    --line-height-tight:1.2;
+
+    --line-height-base:1.6;
+
+    --line-height-loose:1.9;
+
+
+
+    /* ============================================================
+       SPACING SYSTEM
+       8px Scale
+    ============================================================ */
+
+    --space-0:0;
+
+    --space-1:.25rem;
+
+    --space-2:.5rem;
+
+    --space-3:.75rem;
+
+    --space-4:1rem;
+
+    --space-5:1.5rem;
+
+    --space-6:2rem;
+
+    --space-7:3rem;
+
+    --space-8:4rem;
+
+    --space-9:6rem;
+
+    --space-10:8rem;
+
+
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+
+    --container-width:1280px;
+
+    --content-width:900px;
+
+    --section-spacing:var(--space-10);
+
+    --grid-gap:var(--space-6);
+
+
+
+    /* ============================================================
+       BORDER RADIUS
+    ============================================================ */
+
+    --radius-sm:6px;
+
+    --radius-md:12px;
+
+    --radius-lg:20px;
+
+    --radius-xl:32px;
+
+    --radius-pill:999px;
+
+
+
+    /* ============================================================
+       SHADOWS
+    ============================================================ */
+
+    --shadow-sm:
+        0 4px 12px rgba(0,0,0,.15);
+
+    --shadow-md:
+        0 12px 32px rgba(0,0,0,.25);
+
+    --shadow-lg:
+        0 24px 64px rgba(0,0,0,.35);
+
+
+
+    /* ============================================================
+       TRANSITIONS
+    ============================================================ */
+
+    --transition-fast:
+        150ms ease;
+
+    --transition-base:
+        250ms ease;
+
+    --transition-slow:
+        400ms ease;
+
+
+
+    /* ============================================================
+       BREAKPOINTS
+       Documentation only.
+       CSS variables cannot be used in media queries.
+    ============================================================ */
+
+    --breakpoint-sm:480px;
+
+    --breakpoint-md:768px;
+
+    --breakpoint-lg:1024px;
+
+    --breakpoint-xl:1280px;
+
+    --breakpoint-2xl:1440px;
+
+
+
+    /* ============================================================
+       Z-INDEX
+    ============================================================ */
+
+    --z-base:1;
+
+    --z-dropdown:100;
+
+    --z-sticky:200;
+
+    --z-overlay:500;
+
+    --z-modal:1000;
+
+    --z-toast:2000;
+
+}

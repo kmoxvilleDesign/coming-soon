@@ -91,19 +91,20 @@
 
 
 
-    --font-weight-light:300;
+    --font-weight-light: 300;
 
-    --font-weight-regular:400;
+    --font-weight-regular: 400;
 
-    --font-weight-medium:500;
+    --font-weight-medium: 500;
 
-    --font-weight-semibold:600;
+    --font-weight-semibold: 600;
 
-    --font-weight-bold:700;
+    --font-weight-bold: 700;
+
+    --font-weight-extrabold: 800;
 
 
-
-    --line-height-tight:1.2;
+    --line-height-tight: 1.2;
 
     --line-height-base:1.6;
 

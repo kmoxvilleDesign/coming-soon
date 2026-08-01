@@ -1,16 +1,33 @@
+@import url('css/variables.css');
+
+/* Local semantic mappings built from ClearVision design tokens */
 :root {
-  box-sizing: border-box;
-  --bg-main: #111216;
-  --bg-right-column: rgba(22, 25, 27, 0.85);
-  --circle-left-bg: #000000;
-  --circle-right-bg: #111216;
-  --gradient-start: #000000;
-  --gradient-end: #1c1d24;
-  --btn-bg-normal: #d9d9d6;
-  --btn-bg-hover: #b8936d;
-  --btn-text: #111216;
-  --text-light: #ffffff;
-  --font-primary: 'Montserrat', system-ui, -apple-system, sans-serif;
+  /* Spacing helpers (derived from design tokens) */
+  --cv-space-2rem: var(--space-6); /* 2rem */
+  --cv-space-3rem: var(--space-7); /* 3rem */
+  /* 5rem expressed via tokens: 6rem (space-9) minus 1rem (font-size-base) = 5rem */
+  --cv-space-5rem: var(--space-5rem);
+
+  /* Colors */
+  --cv-bg-main: var(--bg-primary);
+  --cv-bg-right-column: var(--bg-overlay);
+  --cv-gradient-start: var(--bg-primary);
+  --cv-gradient-end: var(--bg-secondary);
+
+  /* Buttons */
+  --cv-btn-bg-normal: var(--brand-ivory);
+  --cv-btn-bg-hover: var(--accent-secondary);
+  --cv-btn-text: var(--bg-primary);
+
+  /* Typography */
+  --cv-font-primary: var(--font-family-base);
+  --cv-text-light: var(--text-primary);
+
+  /* Shadows */
+  --cv-circle-shadow: var(--shadow-md);
+
+  /* Transitions */
+  --cv-transition-btn: var(--transition-base);
 }
 
 * {
@@ -21,23 +38,23 @@
 
 body {
   min-height: 100vh;
-  background-color: var(--bg-main);
-  color: var(--text-light);
-  font-family: var(--font-primary);
+  background-color: var(--cv-bg-main);
+  color: var(--cv-text-light);
+  font-family: var(--cv-font-primary);
   overflow-x: hidden;
 }
 
 .brand-header {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: var(--cv-space-2rem);
+  left: var(--cv-space-2rem);
   z-index: 10;
 }
 
 .company-name {
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 2px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight); /* ~2px */
   text-transform: uppercase;
 }
 
@@ -54,12 +71,12 @@ body {
 }
 
 .right-column {
-  background-color: var(--bg-right-column);
+  background-color: var(--cv-bg-right-column);
   position: relative;
   z-index: 3;
   display: flex;
   align-items: center;
-  padding: 5rem 10% 5rem 15%;
+  padding: var(--cv-space-5rem) 10% var(--cv-space-5rem) 15%;
 }
 
 .center-circle {
@@ -67,17 +84,17 @@ body {
   top: 50%;
   left: 34%;
   /* transform wird nun durch die Animation gesteuert */
-  width: clamp(280px, 35vw, 450px);
+  width: clamp(var(--circle-min), 35vw, var(--circle-max));
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   z-index: 2;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  box-shadow: var(--cv-circle-shadow);
   pointer-events: none;
   
   /* NEU: Schwebender Effekt für Desktop */
-  animation: float-desktop 5s ease-in-out infinite;
+  animation: float-desktop var(--float-duration) ease-in-out infinite;
 }
 
 /* NEU: Animations-Schritte für Desktop */
@@ -86,14 +103,14 @@ body {
     transform: translate(-50%, -50%);
   }
   50% {
-    transform: translate(-50%, calc(-50% - 20px));
+    transform: translate(-50%, -50%) translateY(var(--float-offset-neg));
   }
 }
 
 .circle-half-left {
   width: 50%;
   height: 100%;
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background: linear-gradient(135deg, var(--cv-gradient-start), var(--cv-gradient-end));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,7 +119,7 @@ body {
 .circle-half-right {
   width: 50%;
   height: 100%;
-  background-color: var(--circle-right-bg);
+  background-color: var(--cv-gradient-start);
 }
 
 .logo {
@@ -114,19 +131,19 @@ body {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  max-width: 500px;
+  gap: var(--cv-space-3rem);
+  max-width: var(--content-max-width); /* 500px */
 }
 
 .content h1 {
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: 2px;
+  font-size: clamp(var(--h1-min-size), 4.5vw, var(--font-size-5xl));
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight); /* ~2px */
 }
 
 .content p {
-  font-size: 1.1rem;
+  font-size: var(--p-font-size);
   line-height: 1.7;
   opacity: 0.8;
 }
@@ -134,19 +151,19 @@ body {
 .btn-contact {
   display: inline-flex;
   align-self: flex-start;
-  padding: 0.9rem 2.2rem;
-  background-color: var(--btn-bg-normal);
-  color: var(--btn-text);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  background-color: var(--cv-btn-bg-normal);
+  color: var(--cv-btn-text);
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
-  transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.2s ease;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-sm);
+  letter-spacing: var(--letter-spacing-button);
+  transition: background-color var(--cv-transition-btn), transform var(--transition-press);
 }
 
 .btn-contact:hover {
-  background-color: var(--btn-bg-hover);
-  transform: translateY(-2px);
+  background-color: var(--cv-btn-bg-hover);
+  transform: translateY(var(--btn-hover-translate));
 }
 
 .btn-contact:active {
@@ -159,34 +176,34 @@ body {
   }
   
   .left-column {
-    height: 120px;
+    height: var(--left-column-height); /* 120px */
   }
 
   .right-column {
-    padding: 3rem 2rem 5rem 2rem;
-    background-color: rgba(22, 25, 27, 0.95);
+    padding: var(--space-7) var(--space-2) var(--space-9) var(--space-2);
+    background-color: var(--cv-bg-right-column);
     align-items: center;
     justify-content: center;
   }
   
   .brand-header {
-    top: 2rem;
-    left: 2rem;
+    top: var(--cv-space-2rem);
+    left: var(--cv-space-2rem);
   }
   
   .center-circle {
     top: 42%;
     left: 50%;
-    width: clamp(220px, 50vw, 300px);
+    width: clamp(var(--circle-mobile-min), 50vw, var(--circle-mobile-max));
     
     /* NEU: Wechsel auf die Mobile-Animation (inklusive 90 Grad Drehung) */
-    animation: float-mobile 5s ease-in-out infinite;
+    animation: float-mobile var(--float-duration) ease-in-out infinite;
   }
 
   /* Logo gegen die Parent-Rotation ausgleichen */
   .center-circle .logo {
     transform: rotate(-90deg);
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-logo);
   }
 }
 
@@ -197,6 +214,6 @@ body {
   }
   50% {
     /* Bewegt den Kreis optisch nach oben, während die Drehung bestehen bleibt */
-    transform: translate(-50%, calc(-50% - 20px)) rotate(90deg);
+    transform: translate(-50%, -50%) translateY(var(--float-offset-neg)) rotate(90deg);
   }
 }

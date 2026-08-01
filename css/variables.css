@@ -153,6 +153,109 @@
     --grid-gap:var(--space-6);
 
 
+      /* ============================================================
+      COMING-SOON LAYOUT TOKENS
+
+      These tokens preserve the current landing-page appearance
+      during the refactoring process.
+      ============================================================ */
+
+      --coming-soon-panel-bg: rgba(22, 25, 27, 0.85);
+      --coming-soon-panel-bg-mobile: rgba(22, 25, 27, 0.95);
+
+      --coming-soon-panel-padding-desktop: 5rem 10% 5rem 15%;
+      --coming-soon-panel-padding-mobile: 3rem 2rem 5rem;
+
+      --coming-soon-left-column-height-mobile: 7.5rem;
+
+      --z-coming-soon-left-column: 1;
+      --z-coming-soon-circle: 2;
+      --z-coming-soon-right-column: 3;
+      --z-coming-soon-brand: 10;
+
+      /* ============================================================
+      COMING-SOON COMPONENT TOKENS
+
+      These tokens preserve the current landing-page design.
+      They may later be replaced by reusable homepage tokens.
+      ============================================================ */
+
+      /* Brand header */
+
+      --coming-soon-brand-offset: var(--space-6);
+      --coming-soon-brand-letter-spacing: 0.125rem;
+
+      /* Central brand circle */
+
+      --coming-soon-circle-position-x: 34%;
+      --coming-soon-circle-position-y: 50%;
+      --coming-soon-circle-size:
+      clamp(17.5rem, 35vw, 28.125rem);
+
+      --coming-soon-circle-gradient-start: #000000;
+      --coming-soon-circle-gradient-end: #1c1d24;
+      --coming-soon-circle-right-bg: var(--bg-primary);
+
+      --coming-soon-circle-shadow:
+      0 1.25rem 3.125rem rgba(0, 0, 0, 0.3);
+
+      --coming-soon-circle-radius: 50%;
+      --coming-soon-circle-float-distance: 1.25rem;
+
+      /* Logo */
+
+      --coming-soon-logo-width: 55%;
+      --coming-soon-logo-opacity: 0.9;
+
+      /* Content */
+
+      --coming-soon-content-width: 31.25rem;
+      --coming-soon-content-gap: var(--space-7);
+
+      --coming-soon-heading-size:
+      clamp(2.5rem, 4.5vw, 4rem);
+
+      --coming-soon-copy-size: 1.1rem;
+      --coming-soon-copy-line-height: 1.6;
+      --coming-soon-copy-opacity: 0.8;
+
+      /* Contact button */
+
+      --coming-soon-button-bg: #d9d9d6;
+      --coming-soon-button-bg-hover: #b8936d;
+      --coming-soon-button-text: var(--bg-primary);
+
+      --coming-soon-button-padding-block: 0.9rem;
+      --coming-soon-button-padding-inline: 2.2rem;
+
+      --coming-soon-button-radius: 0.25rem;
+      --coming-soon-button-letter-spacing: 0.03125rem;
+      --coming-soon-button-hover-distance: -0.125rem;
+
+      --coming-soon-button-bg-transition:
+      background-color 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
+
+      --coming-soon-button-transform-transition:
+      transform 200ms ease;
+
+      /* Motion */
+
+      --coming-soon-float-duration: 5s;
+      --coming-soon-float-easing: ease-in-out;
+
+      /* Mobile component values */
+
+      --coming-soon-circle-position-x-mobile: 50%;
+      --coming-soon-circle-position-y-mobile: 42%;
+
+      --coming-soon-circle-size-mobile:
+      clamp(13.75rem, 50vw, 18.75rem);
+
+      --coming-soon-logo-mobile-rotation: -90deg;
+
+      --coming-soon-logo-transition:
+      transform 300ms ease;
+
 
     /* ============================================================
        BORDER RADIUS
@@ -233,5 +336,43 @@
     --z-modal:1000;
 
     --z-toast:2000;
+
+    /* ============================================================
+       COMPONENT-SPECIFIC TOKENS
+       These tokens were added to provide exact 1:1 values used by
+       the coming-soon stylesheet without requiring calc() in that file.
+       They are intentionally specific and documented here.
+    ============================================================ */
+
+    --content-max-width: 500px;        /* used for .content max-width (500px) */
+
+    --h1-min-size: 2.5rem;             /* h1 minimum size used in clamp() */
+
+    --p-font-size: 1.1rem;             /* paragraph font-size */
+
+    --btn-padding-y: 0.9rem;           /* button vertical padding */
+    --btn-padding-x: 2.2rem;           /* button horizontal padding */
+
+    --letter-spacing-tight: 2px;       /* tight letter spacing used for headings */
+
+    --left-column-height: 120px;       /* left-column height on small screens */
+
+    --space-5rem: 5rem;                /* explicit 5rem spacing token */
+
+    --circle-min: 280px;               /* center-circle clamp min */
+    --circle-max: 450px;               /* center-circle clamp max */
+
+    --circle-mobile-min: 220px;        /* mobile clamp min */
+    --circle-mobile-max: 300px;        /* mobile clamp max */
+
+    --float-offset: 20px;              /* vertical float offset used in animation */
+    --float-offset-neg: -20px;         /* negative version for translateY() */
+    --float-duration: 5s;
+
+    /* Small component tokens */
+    --btn-hover-translate: -2px;       /* used on .btn-contact hover */
+    --letter-spacing-button: 0.5px;    /* button letter spacing */
+    --transition-press: 200ms ease;    /* small press/interaction timing */
+    --transition-logo: 300ms ease;     /* logo rotation / small UI transition */
 
 }

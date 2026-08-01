@@ -1,0 +1,78 @@
+/* ============================================================
+   ClearVision Consulting
+   Motion & Animations
+   Precision by Design
+============================================================ */
+
+/*
+ * Desktop floating animation
+ *
+ * Keeps the central brand circle horizontally and vertically
+ * centred while adding a subtle upward movement.
+ */
+@keyframes float-desktop {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform:
+      translate(
+        -50%,
+        calc(-50% - var(--coming-soon-circle-float-distance))
+      );
+  }
+}
+
+/*
+ * Mobile floating animation
+ *
+ * Rotates the complete circle by 90 degrees while preserving
+ * the subtle vertical floating movement.
+ */
+@keyframes float-mobile {
+  0%,
+  100% {
+    transform:
+      translate(-50%, -50%)
+      rotate(90deg);
+  }
+
+  50% {
+    transform:
+      translate(
+        -50%,
+        calc(-50% - var(--coming-soon-circle-float-distance))
+      )
+      rotate(90deg);
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+/*
+ * Respect the visitor's operating-system preference for reduced
+ * motion. The circle remains correctly positioned even though
+ * the floating animation is disabled.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .center-circle {
+    animation: none;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (
+  prefers-reduced-motion: reduce
+) and (
+  max-width: 768px
+) {
+  .center-circle {
+    transform:
+      translate(-50%, -50%)
+      rotate(90deg);
+  }
+}

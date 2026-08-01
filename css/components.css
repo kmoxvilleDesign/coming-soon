@@ -1,0 +1,208 @@
+/* ============================================================
+   ClearVision Consulting
+   UI Components
+   Precision by Design
+============================================================ */
+
+/* ============================================================
+   BRAND HEADER
+============================================================ */
+
+/*
+ * ClearVision wordmark positioned above the page layout.
+ */
+.brand-header {
+  position: absolute;
+  top: var(--coming-soon-brand-offset);
+  left: var(--coming-soon-brand-offset);
+  z-index: var(--z-coming-soon-brand);
+}
+
+.company-name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--coming-soon-brand-letter-spacing);
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   CENTRAL BRAND CIRCLE
+============================================================ */
+
+/*
+ * Central circular brand element spanning both layout columns.
+ *
+ * Its transform is controlled by the float animation defined
+ * in animations.css.
+ */
+.center-circle {
+  position: absolute;
+  top: var(--coming-soon-circle-position-y);
+  left: var(--coming-soon-circle-position-x);
+  z-index: var(--z-coming-soon-circle);
+
+  display: flex;
+  width: var(--coming-soon-circle-size);
+  aspect-ratio: 1;
+  overflow: hidden;
+
+  border-radius: var(--coming-soon-circle-radius);
+  box-shadow: var(--coming-soon-circle-shadow);
+
+  pointer-events: none;
+
+  animation:
+    float-desktop
+    var(--coming-soon-float-duration)
+    var(--coming-soon-float-easing)
+    infinite;
+}
+
+/*
+ * Left half containing the ClearVision logo.
+ */
+.circle-half-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 50%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--coming-soon-circle-gradient-start),
+      var(--coming-soon-circle-gradient-end)
+    );
+}
+
+/*
+ * Right half extending into the content area.
+ */
+.circle-half-right {
+  width: 50%;
+  height: 100%;
+
+  background-color: var(--coming-soon-circle-right-bg);
+}
+
+/*
+ * ClearVision emblem inside the left circle half.
+ */
+.logo {
+  width: auto;
+  max-width: var(--coming-soon-logo-width);
+  height: auto;
+
+  opacity: var(--coming-soon-logo-opacity);
+}
+
+/* ============================================================
+   CONTENT
+============================================================ */
+
+/*
+ * Main content group inside the right-hand column.
+ */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--coming-soon-content-gap);
+
+  width: 100%;
+  max-width: var(--coming-soon-content-width);
+}
+
+.content h1 {
+  font-size: var(--coming-soon-heading-size);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--coming-soon-brand-letter-spacing);
+}
+
+.content p {
+  font-size: var(--coming-soon-copy-size);
+  line-height: var(--coming-soon-copy-line-height);
+
+  opacity: var(--coming-soon-copy-opacity);
+}
+
+/* ============================================================
+   CONTACT BUTTON
+============================================================ */
+
+.btn-contact {
+  display: inline-flex;
+  align-self: flex-start;
+
+  padding:
+    var(--coming-soon-button-padding-block)
+    var(--coming-soon-button-padding-inline);
+
+  color: var(--coming-soon-button-text);
+  background-color: var(--coming-soon-button-bg);
+
+  border-radius: var(--coming-soon-button-radius);
+
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--coming-soon-button-letter-spacing);
+  text-decoration: none;
+
+  transition:
+    var(--coming-soon-button-bg-transition),
+    var(--coming-soon-button-transform-transition);
+}
+
+.btn-contact:hover {
+  background-color: var(--coming-soon-button-bg-hover);
+  transform:
+    translateY(var(--coming-soon-button-hover-distance));
+}
+
+.btn-contact:active {
+  transform: translateY(0);
+}
+
+/* ============================================================
+   RESPONSIVE COMPONENTS
+============================================================ */
+
+@media (max-width: 768px) {
+  /*
+   * The offsets intentionally remain unchanged on mobile.
+   * The rule is retained to document the intended positioning.
+   */
+  .brand-header {
+    top: var(--coming-soon-brand-offset);
+    left: var(--coming-soon-brand-offset);
+  }
+
+  /*
+   * On mobile, the circle is centred and rotated by its
+   * dedicated animation.
+   */
+  .center-circle {
+    top: var(--coming-soon-circle-position-y-mobile);
+    left: var(--coming-soon-circle-position-x-mobile);
+
+    width: var(--coming-soon-circle-size-mobile);
+
+    animation:
+      float-mobile
+      var(--coming-soon-float-duration)
+      var(--coming-soon-float-easing)
+      infinite;
+  }
+
+  /*
+   * Counter-rotate the logo so it remains upright while
+   * the containing circle is rotated.
+   */
+  .center-circle .logo {
+    transform:
+      rotate(var(--coming-soon-logo-mobile-rotation));
+
+    transition: var(--coming-soon-logo-transition);
+  }
+}

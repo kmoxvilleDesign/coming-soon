@@ -1,0 +1,82 @@
+/* ============================================================
+   ClearVision Consulting
+   Global Layout
+   Precision by Design
+============================================================ */
+
+/*
+ * Page foundation
+ *
+ * Typography and text colours are defined in typography.css.
+ */
+body {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  overflow-x: hidden;
+}
+
+/*
+ * Main coming-soon layout
+ *
+ * Desktop:
+ * One-third left column and two-thirds right column.
+ */
+.grid-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 100vh;
+}
+
+/*
+ * Left visual area
+ */
+.left-column {
+  position: relative;
+  z-index: var(--z-coming-soon-left-column);
+}
+
+/*
+ * Right content area
+ */
+.right-column {
+  position: relative;
+  z-index: var(--z-coming-soon-right-column);
+
+  display: flex;
+  align-items: center;
+
+  padding: var(--coming-soon-panel-padding-desktop);
+  background-color: var(--coming-soon-panel-bg);
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT
+============================================================ */
+
+@media (max-width: 768px) {
+  /*
+   * Change the desktop columns into vertically stacked rows.
+   */
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+   * Preserve space for the brand area above the content.
+   */
+  .left-column {
+    height: var(--coming-soon-left-column-height-mobile);
+  }
+
+  /*
+   * Centre the content on smaller screens.
+   */
+  .right-column {
+    align-items: center;
+    justify-content: center;
+
+    padding: var(--coming-soon-panel-padding-mobile);
+    background-color: var(--coming-soon-panel-bg-mobile);
+  }
+}

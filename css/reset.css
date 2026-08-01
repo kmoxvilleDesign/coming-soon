@@ -1,8 +1,80 @@
+/* ============================================================
+   ClearVision Consulting
+   CSS Reset
+   Precision by Design
+============================================================ */
+
+/*
+ * Use a predictable box model for every element,
+ * including pseudo-elements.
+ */
+html {
+  box-sizing: border-box;
+}
+
 *,
 *::before,
-*::after
-{
-  box-sizing: border-box;
+*::after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
+}
+
+/*
+ * Prevent browsers from applying unexpected text-size adjustments
+ * when the device orientation changes.
+ */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/*
+ * Provide a stable document foundation.
+ * Visual body styles belong in layout.css and typography.css.
+ */
+html,
+body {
+  min-height: 100%;
+}
+
+/*
+ * Make media elements easier to control inside responsive layouts.
+ */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+ * Ensure form controls inherit the website typography.
+ */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+ * Remove inherited list styling only when a list explicitly
+ * identifies itself as a navigation list.
+ */
+nav ul,
+nav ol {
+  list-style: none;
+}
+
+/*
+ * Respect the user's browser preferences for reduced motion.
+ * Component-specific handling will also be defined in animations.css.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

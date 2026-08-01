@@ -1,0 +1,16 @@
+/* ============================================================
+   ClearVision Consulting
+   Global Typography
+   Precision by Design
+============================================================ */
+
+/*
+ * Global typography foundation.
+ *
+ * Component-specific typography, such as the company name,
+ * hero headline and buttons, belongs in components.css.
+ */
+body {
+  color: var(--text-heading);
+  font-family: var(--font-family-base);
+}

@@ -205,4 +205,13 @@
 
     transition: var(--coming-soon-logo-transition);
   }
+
+  .content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn-contact {
+    align-self: center;
+  }
 }

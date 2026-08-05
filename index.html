@@ -1,41 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coming Soon - Landing Page</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta
+    name="description"
+    content="ClearVision Consulting begleitet Zahnärzte und Kieferorthopäden bei digitalen Workflows, Behandlungsplanung und praxisnaher Umsetzung."
+  >
+
+  <title>ClearVision Consulting</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/home.css">
 </head>
-<body>
 
-  <!-- Das Firmenlogo oben links wird absolut über das Layout gelegt -->
-  <div class="brand-header">
-    <span class="company-name">CLEARVISION.</span>
-  </div>
+<body class="page page--home">
+  <a class="skip-link" href="#main-content">
+    Zum Hauptinhalt
+  </a>
 
-  <div class="grid-container">
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a
+          class="site-brand"
+          href="./index.html"
+          aria-label="ClearVision Consulting Startseite"
+        >
+          <span class="site-brand__name">
+            CLEARVISION
+          </span>
 
-    <!-- Linke Spalte (1fr) -->
-    <div class="left-column"></div>
+          <span
+            class="site-brand__dot"
+            aria-hidden="true"
+          >
+            .
+          </span>
+        </a>
 
-    <!-- Rechte Spalte (2fr) -->
-    <div class="right-column">
-      <div class="content">
-        <h1>COMING<br>SOON</h1>
-        
-        <a href="mailto:kontakt@clearvision-consulting.com?subject=Kontaktanfrage" class="btn-contact">Kontakt aufnehmen</a>
+        <nav
+          class="site-nav"
+          aria-label="Hauptnavigation"
+        >
+          <ul class="site-nav__list">
+            <li class="site-nav__item">
+              <a
+                class="site-nav__link"
+                href="./index.html"
+                aria-current="page"
+              >
+                Startseite
+              </a>
+            </li>
+
+            <li class="site-nav__item">
+              <a
+                class="site-nav__link"
+                href="#services"
+              >
+                Leistungen
+              </a>
+            </li>
+
+            <li class="site-nav__item">
+              <a
+                class="site-nav__link"
+                href="#about"
+              >
+                Über mich
+              </a>
+            </li>
+
+            <li class="site-nav__item">
+              <a
+                class="site-nav__link"
+                href="#contact"
+              >
+                Kontakt
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
+  </header>
 
-    <!-- Zentraler Kreis (wird absolut in die Mitte der Seite gesetzt) -->
-    <div class="center-circle">
-      <div class="circle-half-left">
-        <img class="logo" src="logo.png" alt="Firmenlogo">
+  <main id="main-content">
+    <section
+      class="home-hero"
+      aria-labelledby="home-hero-title"
+    >
+      <div class="container">
+        <div class="home-hero__layout">
+          <div class="home-hero__content">
+            <p class="home-hero__eyebrow">
+              Digitale Zahnmedizin. Klinisch gedacht.
+            </p>
+
+            <h1
+              class="home-hero__title"
+              id="home-hero-title"
+            >
+              Präzision für digitale Workflows in der Zahnmedizin.
+            </h1>
+
+            <p class="home-hero__text">
+              Individuelle Begleitung für Zahnärzte und
+              Kieferorthopäden – von der Behandlungsplanung
+              bis zur nachhaltigen Umsetzung im Praxisalltag.
+            </p>
+
+            <div class="home-hero__actions">
+              <a
+                class="button button--primary"
+                href="#contact"
+              >
+                Erstgespräch anfragen
+              </a>
+
+              <a
+                class="text-link"
+                href="#services"
+              >
+                Leistungen entdecken
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="home-hero__visual"
+            aria-hidden="true"
+          ></div>
+        </div>
       </div>
-      <div class="circle-half-right"></div>
-    </div>
-
-  </div>
-
+    </section>
+  </main>
 </body>
 </html>

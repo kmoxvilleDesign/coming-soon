@@ -1,6 +1,132 @@
 /*
  * Shared components
- *
- * Header, navigation, buttons and footer will be added
- * only when they are implemented.
  */
+
+/* ==========================================================
+   Site header
+   ========================================================== */
+
+.site-header {
+  position: relative;
+  z-index: 10;
+
+  border-bottom: 0.0625rem solid var(--color-border);
+  background-color: var(--color-background);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+
+  min-height: 5rem;
+}
+
+/* ==========================================================
+   Brand wordmark
+   ========================================================== */
+
+.site-brand {
+  display: inline-flex;
+  align-items: baseline;
+
+  color: var(--color-text);
+
+  font-size: var(--text-small);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-brand__dot {
+  color: var(--color-gold);
+}
+
+.site-brand:hover .site-brand__dot {
+  color: var(--color-gold-light);
+}
+
+/* ==========================================================
+   Primary navigation
+   ========================================================== */
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(
+    1.25rem,
+    calc(0.75rem + 2vw),
+    2.75rem
+  );
+
+  list-style: none;
+}
+
+.site-nav__link {
+  position: relative;
+  display: inline-flex;
+
+  padding-block: 1em;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-small);
+  text-decoration: none;
+
+  transition:
+    color var(--transition-default);
+}
+
+.site-nav__link:hover,
+.site-nav__link:focus-visible {
+  color: var(--color-text);
+}
+
+.site-nav__link[aria-current="page"] {
+  color: var(--color-text);
+}
+
+.site-nav__link[aria-current="page"]::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 0.65em;
+  left: 0;
+
+  height: 0.125rem;
+
+  background-color: var(--color-gold);
+}
+
+/* ==========================================================
+   Responsive header
+   ========================================================== */
+
+@media (max-width: 42em) {
+  .site-header__inner {
+    flex-wrap: wrap;
+    gap: 0.5em 1em;
+
+    padding-block: 1em;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .site-nav__list {
+    justify-content: space-between;
+    gap: 0.75em;
+  }
+
+  .site-nav__link {
+    padding-block: 0.75em;
+  }
+
+  .site-nav__link[aria-current="page"]::after {
+    bottom: 0.35em;
+  }
+}

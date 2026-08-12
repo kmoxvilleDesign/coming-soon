@@ -96,8 +96,6 @@
       aria-labelledby="home-hero-title"
     >
         <div class="home-hero__layout">
-          <div class="home-hero__tiles" aria-hidden="true"></div>
-
           <div class="home-hero__content">
             <p class="home-hero__eyebrow">
               Digitale Zahnmedizin. Klinisch gedacht.
@@ -134,11 +132,19 @@
           </div>
 
           <div class="home-hero__visual" aria-hidden="true">
-            <span class="home-hero__griffin"></span>
+            <div class="hologram-wrapper">
+              <canvas id="hologram-canvas"></canvas>
+              <img
+                class="hologram-wrapper__overlay"
+                src="./assets/images/clearvision-griffin-mask.png"
+                alt=""
+                aria-hidden="true"
+              >
+            </div>
           </div>
         </div>
     </section>
   </main>
-  <script src="./js/home.js"></script>
+  <script src="./js/hologram.js"></script>
 </body>
 </html>

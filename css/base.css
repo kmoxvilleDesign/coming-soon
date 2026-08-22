@@ -16,7 +16,6 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  overflow-y: hidden;
 
   color: var(--color-text);
   background-color: var(--color-background);

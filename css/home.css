@@ -6,6 +6,10 @@
    Hero
    ========================================================== */
 
+.page--home {
+  overflow-y: hidden;
+}
+
 .home-hero {
   min-height: clamp(
     42rem,
@@ -58,6 +62,7 @@
 
 .home-hero__griffin {
   display: block;
+  flex-shrink: 0;
 
   width: auto;
   height: clamp(
@@ -65,7 +70,7 @@
     60svh,
     40rem
   );
-  max-width: 85%;
+  max-width: none;
   object-fit: contain;
   filter: drop-shadow(
     0 1.25rem 2.5rem rgb(0 0 0 / 0.45)

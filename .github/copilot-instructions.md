@@ -1,39 +1,17 @@
-# ClearVision Website Instructions
+# ClearVision Consulting — GitHub Copilot Instructions
 
-This is a lightweight HTML and CSS website.
+Follow the repository engineering and design rules in `AGENTS.md`.
 
-## Technology
+Before creating or changing visible website content, read `docs/BusinessContext.md`.
 
-- Use semantic HTML5.
-- Use modern CSS.
-- Do not add JavaScript unless explicitly requested.
-- Do not add frameworks, libraries or build tools.
+Do not invent business facts, claims, testimonials, statistics, qualifications, partnerships, prices, or contact details.
 
-## CSS Structure
+Keep changes narrowly scoped to the user's request.
 
-- css/variables.css contains global colours, typography and layout values.
-- css/base.css contains reset, global typography and the container.
-- css/components.css contains genuinely shared components.
-- css/home.css contains homepage-specific styles.
-- css/main.css imports the global stylesheets.
+For debugging:
+- inspect the current HTML and all CSS rules affecting the element first;
+- identify the actual cause before editing;
+- check wrapper constraints, later overrides, media queries, intrinsic image dimensions, max-width/height, Grid/Flex sizing and object-fit;
+- make the smallest maintainable correction.
 
-Do not create additional CSS files without approval.
-
-## Styling Rules
-
-- Reuse existing variables before adding new ones.
-- Add variables only for genuinely global or repeated values.
-- Use clamp() and calc() for fluid typography and spacing.
-- Use rem for global sizing and em for component proportions.
-- Do not use inline styles.
-- Do not use !important.
-- Do not introduce card layouts, pill navigation, glass effects or decorative glows.
-- Use only the existing ClearVision brand colours.
-
-## Editing Rules
-
-- Keep changes limited to the requested scope.
-- Do not redesign unrelated areas.
-- Do not create new files without approval.
-- Explain the cause of a bug before applying a broad fix.
-- Prefer the smallest maintainable correction.
+Do not redesign unrelated areas.

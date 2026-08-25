@@ -1,0 +1,282 @@
+/*
+ * About page-specific styles
+ */
+
+/* ==========================================================
+   Introduction
+   ========================================================== */
+
+.about-intro {
+  border-bottom: 0.0625rem solid var(--color-border);
+  background: var(--color-surface-right);
+}
+
+.about-intro__layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 3fr)
+    minmax(0, 5fr);
+  grid-template-areas: "portrait content";
+
+  gap: clamp(
+    2rem,
+    calc(1rem + 4vw),
+    6rem
+  );
+  align-items: end;
+}
+
+.about-intro__content {
+  grid-area: content;
+
+  display: grid;
+  align-content: center;
+  justify-items: start;
+
+  gap: clamp(
+    1.25rem,
+    calc(0.75rem + 1vw),
+    2rem
+  );
+  min-width: 0;
+  padding-block: clamp(
+    5rem,
+    calc(3rem + 5vw),
+    9rem
+  );
+}
+
+.about-intro__eyebrow {
+  color: var(--color-gold);
+
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.about-intro__title {
+  max-width: 15ch;
+
+  color: var(--color-text);
+
+  font-size: clamp(
+    3rem,
+    calc(2rem + 2.6vw),
+    4.5rem
+  );
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+
+  text-wrap: balance;
+}
+
+.about-intro__text {
+  max-width: 40rem;
+
+  color: var(--color-text-secondary);
+
+  font-size: var(--text-lead);
+  line-height: 1.55;
+}
+
+.about-intro__portrait {
+  grid-area: portrait;
+  align-self: end;
+  justify-self: center;
+
+  width: 100%;
+  margin: 0;
+  padding-top: clamp(
+    3rem,
+    calc(2rem + 3vw),
+    6rem
+  );
+}
+
+.about-intro__image {
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================
+   Editorial sections
+   ========================================================== */
+
+.about-section {
+  padding-block: var(--section-spacing);
+
+  border-bottom: 0.0625rem solid var(--color-border);
+  background-color: var(--color-background);
+}
+
+.about-section--closing {
+  border-bottom: 0;
+}
+
+.about-section__layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(0, 6fr);
+
+  gap: clamp(
+    2rem,
+    calc(1rem + 4vw),
+    6rem
+  );
+  align-items: start;
+}
+
+.about-section__title {
+  max-width: 15ch;
+
+  color: var(--color-text);
+
+  font-size: var(--text-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+
+  text-wrap: balance;
+}
+
+.about-section__copy {
+  display: grid;
+  gap: 1.4em;
+
+  width: 100%;
+  max-width: 46rem;
+  min-width: 0;
+}
+
+.about-section__copy p {
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.about-section__copy .about-section__closing-statement {
+  max-width: 30ch;
+  margin-top: clamp(
+    1.5rem,
+    calc(1rem + 1.5vw),
+    3rem
+  );
+  padding-top: clamp(
+    1.5rem,
+    calc(1rem + 1.5vw),
+    3rem
+  );
+
+  border-top: 0.0625rem solid var(--color-border);
+
+  color: var(--color-text);
+
+  font-size: clamp(
+    1.5rem,
+    calc(1.2rem + 1vw),
+    2.25rem
+  );
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+/* ==========================================================
+   Working principles
+   ========================================================== */
+
+.about-principles {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0;
+
+  border-top: 0.0625rem solid var(--color-border);
+}
+
+.about-principles__item {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(0, 4fr);
+
+  gap: 1.5em;
+  padding-block: 1.5em;
+
+  border-bottom: 0.0625rem solid var(--color-border);
+}
+
+.about-principles__term {
+  color: var(--color-gold);
+
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.about-principles__description {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+/* ==========================================================
+   Responsive About page
+   ========================================================== */
+
+@media (max-width: 56em) {
+  .about-intro__layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "content"
+      "portrait";
+
+    gap: 0;
+  }
+
+  .about-intro__content {
+    padding-block: clamp(
+      4rem,
+      calc(2rem + 6vw),
+      6rem
+    );
+  }
+
+  .about-intro__portrait {
+    width: min(100%, 34rem);
+    padding-top: 0;
+  }
+
+  .about-section__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(
+      2rem,
+      calc(1.5rem + 2vw),
+      3rem
+    );
+  }
+
+  .about-section__title {
+    max-width: 20ch;
+  }
+}
+
+@media (max-width: 42em) {
+  .about-intro__title {
+    max-width: 12ch;
+  }
+
+  .about-intro__portrait {
+    width: min(100%, 30rem);
+  }
+
+  .about-principles__item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.6em;
+  }
+}

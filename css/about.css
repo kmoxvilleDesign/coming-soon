@@ -34,7 +34,7 @@
   justify-items: start;
 
   gap: clamp(
-    1.25rem,
+    2rem,
     calc(0.75rem + 1vw),
     2rem
   );
@@ -120,7 +120,7 @@
   display: grid;
   grid-template-columns:
     minmax(0, 2fr)
-    minmax(0, 6fr);
+    minmax(0, 4fr);
 
   gap: clamp(
     2rem,

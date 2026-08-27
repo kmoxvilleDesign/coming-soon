@@ -7,7 +7,7 @@
    ========================================================== */
 
 .page--home {
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .home-hero {
@@ -157,6 +157,11 @@
 
   gap: 1em 1.75em;
   padding-top: 2rem;
+}
+
+.home-hero__actions .button,
+.home-hero__actions .text-link {
+  min-height: 2.75rem;
 }
 
 /* ==========================================================

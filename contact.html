@@ -223,18 +223,18 @@
             <li>
               <a
                 class="site-footer__link"
-                href="./about.html"
+                href="./services.html"
               >
-                Über mich
+                Leistungen
               </a>
             </li>
 
             <li>
               <a
                 class="site-footer__link"
-                href="./services.html"
+                href="./about.html"
               >
-                Leistungen
+                Über mich
               </a>
             </li>
 
@@ -245,6 +245,35 @@
                 aria-current="page"
               >
                 Erstgespräch
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav
+          class="site-footer__group"
+          aria-label="Rechtliches"
+        >
+          <h2 class="site-footer__heading">
+            Rechtliches
+          </h2>
+
+          <ul class="site-footer__list">
+            <li>
+              <a
+                class="site-footer__link"
+                href="./impressum.html"
+              >
+                Impressum
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="site-footer__link"
+                href="./datenschutz.html"
+              >
+                Datenschutz
               </a>
             </li>
           </ul>
@@ -301,7 +330,7 @@
     });
 
     Cal.config = Cal.config || {};
-    Cal.config.forwardQueryParams = true;
+    Cal.config.forwardQueryParams = false;
 
     Cal.ns.erstgesprach("inline", {
       elementOrSelector: "#my-cal-inline-erstgesprach",

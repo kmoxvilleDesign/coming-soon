@@ -56,7 +56,7 @@
   );
   overflow: hidden;
 
-  background: var(--color-surface-left);
+  background: #34363a;
   pointer-events: none;
 }
 

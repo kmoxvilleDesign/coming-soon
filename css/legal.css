@@ -1,0 +1,170 @@
+/*
+ * Legal pages-specific styles
+ */
+
+/* ==========================================================
+   Introduction
+   ========================================================== */
+
+.legal-intro {
+  padding-block: clamp(
+    3rem,
+    calc(2rem + 2.5vw),
+    5rem
+  );
+
+  border-bottom: 0.0625rem solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.legal-intro__layout {
+  display: grid;
+  gap: clamp(0.875rem, calc(0.75rem + 0.4vw), 1.25rem);
+
+  width: 100%;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.legal-intro__eyebrow {
+  color: var(--color-gold);
+
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.legal-intro__title {
+  color: var(--color-text);
+
+  font-size: clamp(
+    2.5rem,
+    5vw,
+    4.5rem
+  );
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+/* ==========================================================
+   Legal content
+   ========================================================== */
+
+.legal-content {
+  padding-block: clamp(
+    3.5rem,
+    calc(2.5rem + 3vw),
+    6rem
+  );
+
+  background-color: var(--color-background);
+}
+
+.legal-content__inner {
+  width: 100%;
+  max-width: 52rem;
+  margin-inline: auto;
+}
+
+.legal-content__section + .legal-content__section {
+  margin-top: clamp(
+    3.5rem,
+    calc(2.75rem + 1.5vw),
+    5rem
+  );
+}
+
+.legal-content__heading {
+  color: var(--color-text);
+
+  font-size: clamp(
+    1.4rem,
+    calc(1.25rem + 0.6vw),
+    1.8rem
+  );
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+.legal-content__copy {
+  display: grid;
+  gap: 1.15em;
+
+  margin-top: 1.25em;
+
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.legal-content__copy address {
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.legal-content__copy ul {
+  display: grid;
+  gap: 0.45em;
+
+  padding-left: 1.35em;
+}
+
+.legal-content__link {
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+  text-decoration-color: var(--color-gold);
+  text-underline-offset: 0.25em;
+
+  transition:
+    color var(--transition-default),
+    text-decoration-color var(--transition-default);
+}
+
+.legal-content__link:hover,
+.legal-content__link:focus-visible {
+  color: var(--color-gold-light);
+  text-decoration-color: currentColor;
+}
+
+.legal-content__status {
+  margin-top: clamp(
+    3.5rem,
+    calc(2.75rem + 1.5vw),
+    5rem
+  );
+
+  color: var(--color-text-muted);
+
+  font-size: var(--text-small);
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================
+   Responsive legal pages
+   ========================================================== */
+
+@media (max-width: 56em) {
+  .legal-content {
+    padding-block: clamp(
+      3.5rem,
+      calc(2.5rem + 4vw),
+      5rem
+    );
+  }
+}
+
+@media (max-width: 42em) {
+  .legal-intro__title {
+    font-size: clamp(
+      1.875rem,
+      8.2vw,
+      2.5rem
+    );
+  }
+}
